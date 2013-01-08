@@ -256,6 +256,92 @@ function wws_discography_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-track-field_album'.
+  $fields['node-track-field_album'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_album',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'album' => 'album',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'track',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 3,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_album',
+      'label' => 'Album',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '-1',
+      ),
+    ),
+  );
+
   // Exported field: 'node-track-field_buy_link'.
   $fields['node-track-field_buy_link'] = array(
     'field_config' => array(
@@ -470,8 +556,71 @@ function wws_discography_field_default_fields() {
     ),
   );
 
+  // Exported field: 'relation-contains-endpoints'.
+  $fields['relation-contains-endpoints'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'endpoints',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'relation' => array(
+          0 => 'entity_type',
+          1 => 'entity_id',
+          2 => 'r_index',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'relation_endpoint',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'relation_endpoint',
+    ),
+    'field_instance' => array(
+      'bundle' => 'contains',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'relation_endpoint',
+          'settings' => array(
+            'view_modes' => array(
+              'comment' => 'default',
+              'file' => 'default',
+              'node' => 'default',
+              'relation' => 'default',
+              'taxonomy_term' => 'default',
+              'taxonomy_vocabulary' => 'default',
+              'user' => 'default',
+            ),
+          ),
+          'type' => 'relation_endpoint',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'relation',
+      'field_name' => 'endpoints',
+      'label' => 'endpoints',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'relation_endpoint',
+        'settings' => array(),
+        'type' => 'relation_endpoint',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Album');
   t('Album Cover');
   t('Buy Links');
   t('Date the Album was released.');
@@ -480,6 +629,7 @@ function wws_discography_field_default_fields() {
   t('Release Date');
   t('The total length of the track.');
   t('Track Number');
+  t('endpoints');
   t('song_length');
 
   return $fields;
