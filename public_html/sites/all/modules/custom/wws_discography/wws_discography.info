@@ -22,7 +22,6 @@ features[features_api][] = api:1
 features[field][] = node-album-field_album_cover
 features[field][] = node-album-field_buy_links
 features[field][] = node-album-field_release_date
-features[field][] = node-album-field_track
 features[field][] = node-track-field_album
 features[field][] = node-track-field_track_number
 features[image][] = medium_album

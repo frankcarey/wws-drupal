@@ -86,13 +86,13 @@ function wws_discography_default_page_manager_handlers() {
     $pane->pid = 'new-2';
     $pane->panel = 'center';
     $pane->type = 'views';
-    $pane->subtype = 'track_listing';
+    $pane->subtype = 'album_listing';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '100',
+      'use_pager' => 1,
+      'nodes_per_page' => '0',
       'pager_id' => '0',
       'offset' => '0',
       'more_link' => 0,
@@ -101,12 +101,12 @@ function wws_discography_default_page_manager_handlers() {
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'block',
-      'override_title' => 1,
-      'override_title_text' => '',
+      'display' => 'default',
       'context' => array(
         0 => 'argument_entity_id:node_1.nid',
       ),
+      'override_title' => 1,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(

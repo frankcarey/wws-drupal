@@ -65,15 +65,15 @@ function wws_discography_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Contextual filter: Broken/missing handler */
-  $handler->display->display_options['arguments']['field_album_value']['id'] = 'field_album_value';
-  $handler->display->display_options['arguments']['field_album_value']['table'] = 'field_data_field_album';
-  $handler->display->display_options['arguments']['field_album_value']['field'] = 'field_album_value';
-  $handler->display->display_options['arguments']['field_album_value']['default_action'] = 'empty';
-  $handler->display->display_options['arguments']['field_album_value']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_album_value']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_album_value']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_album_value']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Album (field_album) */
+  $handler->display->display_options['arguments']['field_album_target_id']['id'] = 'field_album_target_id';
+  $handler->display->display_options['arguments']['field_album_target_id']['table'] = 'field_data_field_album';
+  $handler->display->display_options['arguments']['field_album_target_id']['field'] = 'field_album_target_id';
+  $handler->display->display_options['arguments']['field_album_target_id']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_album_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_album_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_album_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_album_target_id']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
