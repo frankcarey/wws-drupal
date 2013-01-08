@@ -142,7 +142,7 @@ function wws_discography_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_buy_links',
-      'label' => 'Buy Links',
+      'label' => 'Purchase Links',
       'required' => 0,
       'settings' => array(
         'attributes' => array(
@@ -156,7 +156,7 @@ function wws_discography_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
-        'title' => 'value',
+        'title' => 'required',
         'title_maxlength' => '128',
         'title_value' => 'Buy',
         'url' => 0,
@@ -256,92 +256,6 @@ function wws_discography_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-album-field_track'.
-  $fields['node-album-field_track'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_track',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'target_id' => array(
-          0 => 'target_id',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'entityreference',
-      'settings' => array(
-        'handler' => 'base',
-        'handler_settings' => array(
-          'behaviors' => array(
-            'views-select-list' => array(
-              'status' => 0,
-            ),
-          ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'album' => 'album',
-          ),
-        ),
-        'target_type' => 'node',
-      ),
-      'translatable' => '0',
-      'type' => 'entityreference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'album',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 3,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_track',
-      'label' => 'Track',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'entityreference',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => '60',
-        ),
-        'type' => 'entityreference_autocomplete',
-        'weight' => '-1',
-      ),
-    ),
-  );
-
   // Exported field: 'node-track-field_album'.
   $fields['node-track-field_album'] = array(
     'field_config' => array(
@@ -350,14 +264,7 @@ function wws_discography_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_album',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
+      'foreign keys' => array(),
       'indexes' => array(
         'target_id' => array(
           0 => 'target_id',
@@ -493,10 +400,9 @@ function wws_discography_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Album');
   t('Album Cover');
-  t('Buy Links');
   t('Date the album was released.');
+  t('Purchase Links');
   t('Release Date');
-  t('Track');
   t('Track Number');
 
   return $fields;

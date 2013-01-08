@@ -88,7 +88,7 @@ function wws_discography_image_default_styles() {
 function wws_discography_node_info() {
   $items = array(
     'album' => array(
-      'name' => t('album'),
+      'name' => t('Album'),
       'base' => 'node_content',
       'description' => t('Music Album'),
       'has_title' => '1',
