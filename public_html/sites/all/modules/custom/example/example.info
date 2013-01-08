@@ -1,0 +1,4 @@
+name = Example
+description = stuff.
+package = Custom
+core = 7.x
